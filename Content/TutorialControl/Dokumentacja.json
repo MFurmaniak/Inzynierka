@@ -1,0 +1,267 @@
+[
+  {
+  "Name": "Licznik",
+  "Tytul": "Licznik",
+  "Wstep": "Behaviour Tree - pozwala użytkownikowi w prosty sposób określać zachowanie obiektów na wydarzenia, patrząc w dobrze skonstruowane drzewo wiemy dokładnie w jaki sposób obiekty będą reagować na różne zmiany. Poznanie BT, w jaki sposób działa i jakie możliwości daje jest kluczowe do dalszej pracy nad AI. ",
+  "Mapa": [
+    {
+      "Name" : "Wyswietlacz",
+      "Value" : "Na środku mapy stoi telebim na którym będzie wyświetlany stan naszego licznika."
+    },
+    {
+      "Name" : "Guzik",
+      "Value" : "Zielone pole na mapie reprezentuje klasyczny guzik (dwa stany on/off), po wejściu postaci na pole guzik zostaje wciśnięty (on), gdy postać zejdzie z pola stan guzika się zmieni (off)."
+    },
+    {
+      "Name" : "Postac",
+      "Value" : "Manekin którym poruszamy przy pomocy myszy w celu zmiany stanu guzika."
+    }
+  ],
+  "Cel": [
+    "Należy skonstruować drzewo decyzyjne wykorzystując dostępne zadania w taki sposób, aby na wyświetlaczu były drukowane liczby/litery w zależności od stanu (on/off) guzika."
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "BTT_resetValue",
+      "Value" : "Resetuje stan licznika do stanu początkowego"
+    },
+    {
+      "Name" : "BTT_PrintNumberAndIncrement",
+      "Value" : "Pobiera aktualny stan licznika, drukuje wartość na wyświetlaczu i zwiększa wartość o 1"
+    },
+    {
+      "Name" : "BTT_PrintLetterAndIncrement",
+      "Value" : "Analogicznie jak powyższy tylko działa na literach."
+    }
+  ],
+  "Podpowiedzi": [],
+  "Odnosniki":[{
+    "Name":"",
+    "Value":""}
+  ]
+},
+{
+  "Name": "Poruszanie Się",
+  "Tytul": "Poruszanie Się",
+  "Wstep": "Postacie sterowane sztuczną inteligencją potrafią wykonywać wiele czynności. Niezależnie od ich zachowań najpierw trzeba ustawić z czego określony pionek ma korzystać. W tym zadaniu dowiesz się jak ustawić kontroler sztucznej inteligencji dla obiektu oraz jak uruchomić drzewo decyzyjne.   Podstawową czynność jaką wykonują różnego rodzaju postacie to przemieszczanie się z miejsca na miejsce. Nie ma takiej gry, w której żadna z postaci by się nie poruszała. Z tego powodu chcemy rozpocząć właśnie od tego, podczas tego poziomu powiesz postaci aby przeszła do wyznaczonego miejsca oraz rozpoczniesz oswajanie się z interfejsem UE4.",
+  "Mapa": [
+    {
+      "Name" : "CharacterPoruszanie ",
+      "Value" : "obiekt który będziemy chcieli przemieścić"
+    },
+    {
+      "Name" : "CustomTarget ",
+      "Value" : "wyznaczony punkt końcowy na mapie"
+    }
+  ],
+  "Cel": [
+    "Postać ma przejść z pozycji startowej do wyznaczonego punktu na mapie używając tylko kontrolera sztucznej inteligencji (AiController)",
+	"Postać ma przejść z pozycji startowej do wyznaczonego punktu na mapie używając drzewa zachowań (BehaviorTree i BlackBoard)"
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "",
+      "Value" : ""
+    }
+  ],
+  "Podpowiedzi": [
+	"Ustawienie klucza typu Object o klasie bazowej typu Actor pozwala na użycie zadania move to do tego obiektu.",
+	"Ustawienie siatki nawigacji na mapie."
+  ],
+  "Odnosniki":[{
+    "Name":"",
+    "Value":""}
+  ]
+},
+{
+  "Name": "Blokada drogi",
+  "Tytul": "Blokada drogi",
+  "Wstep": "Czasami najkrótsza droga z punktu A do punktu B nie jest drogą którą powinniśmy wybierać. Często w grach postacie muszą rozróżniać czy jakiś obiekt jest wrogi czy przyjazny. Podczas tego poziomu spróbujemy wybrać trudniejszą drogę w celu ominięcia strażnika. Dzięki temu dowiemy się jak sprawić aby postać była traktowana jako przeszkoda oraz jak zrobić miejsca które postać sama będzie używać do określonych zadań.",
+  "Mapa": [
+    {
+      "Name" : "Opis",
+      "Value" : "Mapa została podzielona na dwie części, szarą w której nasza postać rozpoczyna swoją trasę oraz zieloną pomieszczenie które jest celem do którego musimy dojść. Do zielonego pomieszczenia prowadzą dwie ścieżki, na jednej z nich stoi strażnik, natomiast na drugiej ścieżce jest przepaść."
+    },
+    {
+      "Name" : "Character_Blocker",
+      "Value" : "strażnik"
+    },
+    {
+      "Name" : "Character_Blokada_Drogi",
+      "Value" : "obiekt który będziemy chcieli przemieścić"
+    },
+    {
+      "Name" : "Target_Blokada_Drogi ",
+      "Value" : "wyznaczony cel na mapie"
+    }
+  ],
+  "Cel": [
+    "Ustawienie NavLinkProxy_Blokada_Drogi w odpowiednim miejscu na mapie oraz skonfigurowanie smart link dla tego obiektu",
+	"Zaznaczenie że Blocker to przeszkoda",
+	"Skonfigurowanie Eventu Receive Smart Link Reached dla NavLinkProxy_Blokada_Drogi"
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "",
+      "Value" : ""
+    }
+  ],
+  "Podpowiedzi": [
+	"Możesz użyć funkcji CalcVelocity do wyliczenia prędkości potrzebnej do pokonania odległości z punktu startowego do końcowego w określonym czasie ustawionym w parametrze duration.",
+	"Jeżeli dobrze ustawisz Blockera jako przeszkodę, siatka nawigacji pod nim powinna stać się czerwona, czasem trzeba jednak przebudować ścieżki nawigacji, aby to się stało."
+  ],
+  "Odnosniki":[{
+    "Name":"",
+    "Value":""}
+  ]
+},
+{
+  "Name": "Czujnik światła",
+  "Tytul": "Czujnik światła",
+  "Wstep": "W tym etapie trochę naciągniemy rzeczywistość aby pokazać w jaki sposób można sprawić aby postać mogła patrzeć, widzieć i reagować na to co widzi. Naszą postacią będzie tutaj lampa ścienna, która jak automatyczne światła będzie się zapalać gdy wykryje naszą postać. W tym etapie dowiesz się jak skonfigurować komponent AiPerception dla AiController.",
+  "Mapa": [
+    {
+      "Name" : "Pomieszczenie",
+      "Value" : "Pomieszczenie ze ścianą na środku na której znajduje się lampa"
+    },
+    {
+      "Name" : "Postać ",
+      "Value" : "sterowana ręcznie."
+    }
+  ],
+  "Cel": [
+    "Należy tak zaprogramować Controller_LightSource, że w przypadku gdy sterowana postać będzie w zasięgu lampy, ta ma się zaświecić,a gdy postać opuści ten obszar światło powinno zgasnąć po określonym czasie. Efekt powinien przypominać światło sterowane fotokomórką na klatce schodowej."	
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "",
+      "Value" : ""
+    }
+  ],
+  "Podpowiedzi": [
+	"Po naciśnięciu klawisza ‘ na klawiaturze podczas odpalonej rozgrywki można otworzyć debug sztucznej inteligencji. W tym trybie naciśnięcie num4 pozwala na pokazanie zasięgu widzenia postaci oraz co ta postać wykryła."
+  ],
+  "Odnosniki":[{
+    "Name":"",
+    "Value":""}
+  ]
+},
+{
+  "Name": "Labirynt",
+  "Tytul": "Labirynt",
+  "Wstep": "Znalezienie drogi z punktu A do punktu B nie stanowi już żadnego problemu. Co jednak w przypadku gdy na drodze pojawią się drzwi które są zamknięte, a nie da się ich ominąć? Często elementem gier jest zbieranie przedmiotów będących elementem jakiejś misji. Tak więc podczas tego poziomu będzie trzeba znaleźć klucz do drzwi przez które musi nasz obiekt się przedostać. W tym etapie dowiesz się jak stworzyć prosty serwis oraz zadanie jak również jakie są różnice pomiędzy nimi.",
+  "Mapa": [
+    {
+      "Name" : "FinishPoint",
+      "Value" : "miejsce docelowe"
+    },
+    {
+      "Name" : "Character_Labirynt_Klucz",
+      "Value" : "postać która ma wykonać zadanie"
+    },
+    {
+      "Name" : "Door",
+      "Value" : "drzwi które wymagają klucza"
+    },
+    {
+      "Name" : "Key",
+      "Value" : "klucz do drzwi pojawia się po losowym czasie z przedziału 0-10 po rozpoczęciu etapu"
+    },
+    {
+      "Name" : "KeyLocationSpawn ",
+      "Value" : "miejsce gdzie znajdziemy klucz"
+    }
+  ],
+  "Cel": [
+    "Utworzenie zadania które pozwoli na zlokalizowanie klucza na mapie.",
+	"Utworzenie serwisu z dokładnie taką samą funkcjonalnością.",
+	"Stworzenie drzew decyzyjnych które sprawią że postać dotrze do określonego punktu.",
+	"Ustawienie dynamicznego tworzenia siatki nawigacji."
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "BTT_PickUpKey",
+      "Value" : "postać podniesie klucz gdy znajduje sie wystarczajaco blisko"
+    },
+	{
+      "Name" : "BTT_OpenDoor ",
+      "Value" : "gdy posiada klucz i znajduje sie wystarczajaco blisko postać otworzy drzwi"
+    }
+  ],
+  "Podpowiedzi": [],
+  "Odnosniki":[{
+    "Name":"",
+    "Value":""}
+  ]
+},
+{
+  "Name": "Wartownik 1",
+  "Tytul": "Wartownik 1",
+  "Wstep": "W poprzednich poziomach nauczyliśmy się już tworzyć drzewa zachowań oraz używać komponentu aby sprawić aby postać potrafiła patrzeć. W tym etapie połączymy te dwie rzeczy w jednej postaci i sprawimy aby wykonywała jedną czynność w tym przypadku patrolowanie okolicy a gdy zobaczy jedną z postaci biegających po mapie ucieknie do swojej kryjówki a następnie wróci do patrolowania. Dzięki temu nauczysz się łączyć te dwie rzeczy i tworzyć bardziej zaawansowane postaci.",
+  "Mapa": [
+    {
+      "Name" : "Opis",
+      "Value" : "Mapa przypomina fragment lasu w którego centrum znajduje się wartownia naszego wartownika."
+    },
+    {
+      "Name" : "Character_Wartownik",
+      "Value" : "obiekt do oprogramowania"
+    },
+    {
+      "Name" : "Target_Wartownik",
+      "Value" : "miejsce meldunku wartownika"
+    },
+    {
+      "Name" : "Manekin ",
+      "Value" : "obiekt którym będziemy się poruszać"
+    }
+  ],
+  "Cel": [
+    "Stworzenie drzewa decyzyjnego dla postaci wartownika",
+	"Utworzenie prostej reakcji na wykrycie przeciwnika dla kontrolera wartownika"	
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "BTT_ResetLineOfSight ",
+      "Value" : "należy wykonać po dojściu do wyznaczonego miejsca"
+    },
+	{
+      "Name" : "BT_Patrol",
+      "Value" : "do wykorzystania aby wartownik patrolował teren"
+    }
+  ],
+  "Podpowiedzi": [
+	"Możesz wykorzystać drzewo BT_patrol przez umieszczenie węzła run behavior w drzewie"
+  ],
+  "Odnosniki":[{
+    "Name":"",
+    "Value":""}
+  ]
+},
+{
+  "Name": "Wartownik V2",
+  "Tytul": "Wartownik V2",
+  "Wstep": "W poprzedniej wersji utworzyliśmy wartownika który w momencie w którym zauważy przeciwnika ucieka do swojej kryjówki. Postać tego typu może być jednak mało przydatna. W tym etapie stworzymy coś bardziej zaawansowanego. W tym przypadku postać po zobaczeniu postaci powinna podążać za nią do momentu w którym straci go z zasięgu wzroku, po tym dojść do miejsca w którym widziała go po raz ostatni i wrócić do patrolowania.",
+  "Mapa": [
+    {
+      "Name" : "Opis",
+      "Value" : "Mapa wygląda dokładnie tak samo jak w ostatniej wersji wartownika, jednak postać wartownika umie już to co wartownik v1."
+    }
+  ],
+  "Cel": [
+    "Zmodyfikowanie istniejącego już drzewa",
+	"Zmodyfikowanie istniejącej już reakcji na zauważenie przeciwnika"
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "",
+      "Value" : ""
+    }
+  ],
+  "Podpowiedzi": [],
+  "Odnosniki":[{
+    "Name":"",
+    "Value":""}
+  ]
+}
+]
