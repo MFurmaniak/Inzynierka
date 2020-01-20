@@ -34,16 +34,21 @@
       "Value" : "Analogicznie jak powyższy tylko działa na literach."
     }
   ],
-  "Podpowiedzi": [],
+  "Podpowiedzi": [
+    "Ustawienie Observer aborts na self we flow control dekoratora pozwala na natychmiastowe porzucenie gałęzi w momencie gdy warunek dekoratora nie jest spełniony"
+  ],
   "Odnosniki":[{
-    "Name":"",
-    "Value":""}
+    "Name":"Behavior Tree Node Reference: Decorators",
+    "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceDecorators/index.html"},
+    {
+      "Name":"Behavior Tree Node Reference: Composites",
+      "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceComposites/index.html"}
   ]
 },
 {
   "Name": "Poruszanie Się",
   "Tytul": "Poruszanie Się",
-  "Wstep": "Postacie sterowane sztuczną inteligencją potrafią wykonywać wiele czynności. Niezależnie od ich zachowań najpierw trzeba ustawić z czego określony pionek ma korzystać. W tym zadaniu dowiesz się jak ustawić kontroler sztucznej inteligencji dla obiektu oraz jak uruchomić drzewo decyzyjne.   Podstawową czynność jaką wykonują różnego rodzaju postacie to przemieszczanie się z miejsca na miejsce. Nie ma takiej gry, w której żadna z postaci by się nie poruszała. Z tego powodu chcemy rozpocząć właśnie od tego, podczas tego poziomu powiesz postaci aby przeszła do wyznaczonego miejsca oraz rozpoczniesz oswajanie się z interfejsem UE4.",
+  "Wstep": "Postacie sterowane sztuczną inteligencją potrafią wykonywać wiele czynności. Niezależnie od ich zachowań najpierw trzeba ustawić z czego określony pionek ma korzystać. W tym zadaniu dowiesz się jak ustawić kontroler sztucznej inteligencji dla obiektu oraz jak uruchomić drzewo decyzyjne. ",
   "Mapa": [
     {
       "Name" : "CharacterPoruszanie ",
@@ -66,17 +71,30 @@
   ],
   "Podpowiedzi": [
 	"Ustawienie klucza typu Object o klasie bazowej typu Actor pozwala na użycie zadania move to do tego obiektu.",
-	"Ustawienie siatki nawigacji na mapie."
+	"Aby postać mogła się poruszać, konieczne jest umieszczanie siatki nawigacji na mapie.",
+    "Naciśnięcie klawisza podczas edycji poziomu pozwala wyświetlić siatkę nawigacji."
   ],
   "Odnosniki":[{
-    "Name":"",
-    "Value":""}
+    "Name":"Behavior Tree Node Reference: Tasks",
+    "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceTasks/index.html"},
+    {
+      "Name":"GetActorOfClass",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/GetActorOfClass/index.html"
+    },
+    {
+      "Name":"GetActorLocation",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/Transformation/GetActorLocation/index.html"
+    },
+    {
+      "Name":"SetValueAsObject",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/AI/Components/Blackboard/SetValueasObject/index.html"
+    }
   ]
 },
 {
   "Name": "Blokada drogi",
   "Tytul": "Blokada drogi",
-  "Wstep": "Czasami najkrótsza droga z punktu A do punktu B nie jest drogą którą powinniśmy wybierać. Często w grach postacie muszą rozróżniać czy jakiś obiekt jest wrogi czy przyjazny. Podczas rozwiązywania tego poziomu spróbujemy wybrać trudniejszą drogę w celu ominięcia strażnika. Dzięki temu dowiemy się jak sprawić aby postać była traktowana jako przeszkoda oraz jak zrobić miejsca które postać sama będzie używać do określonych zadań.",
+  "Wstep": "Czasami najkrótsza droga z punktu A do punktu B nie jest drogą którą powinniśmy wybierać. Często w grach postacie muszą rozróżniać czy jakiś obiekt jest wrogi czy przyjazny. Podczas rozwiązywania tego poziomu spróbujemy wybrać trudniejszą drogę, ponad przepaścią, w celu ominięcia strażnika. Dzięki temu dowiemy się jak sprawić aby postać była traktowana jako przeszkoda oraz jak zrobić miejsca które postać sama będzie używać do określonych zadań.",
   "Mapa": [
     {
       "Name" : "Opis",
@@ -92,7 +110,7 @@
     },
     {
       "Name" : "Target_Blokada_Drogi ",
-      "Value" : "Wyznaczony cel na mapie"
+      "Value" : "Wyznaczony cel na mapie do którego postać musi dojść"
     }
   ],
   "Cel": [
@@ -108,11 +126,17 @@
   ],
   "Podpowiedzi": [
 	"Możesz użyć funkcji CalcVelocity do wyliczenia prędkości potrzebnej do pokonania odległości z punktu startowego do końcowego w określonym czasie ustawionym w parametrze duration.",
-	"Jeżeli dobrze ustawisz Blockera jako przeszkodę, siatka nawigacji pod nim powinna stać się czerwona, czasem trzeba jednak przebudować ścieżki nawigacji, aby to się stało."
+    "Jeżeli dobrze ustawisz Blockera jako przeszkodę, siatka nawigacji pod nim powinna stać się czerwona, czasem trzeba jednak przebudować ścieżki nawigacji, aby to się stało."
   ],
   "Odnosniki":[{
-    "Name":"",
-    "Value":""}
+    "Name":"LaunchCharacter",
+    "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Character/LaunchCharacter/index.html"},
+    {
+      "Name":"Teleport",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/Transformation/Teleport/index.html"},
+    {
+      "Name":"Casting in Blueprints",
+      "Value":"https://docs.unrealengine.com/en-US/Engine/Blueprints/UserGuide/CastNodes/index.html"}
   ]
 },
 {
@@ -139,11 +163,21 @@
     }
   ],
   "Podpowiedzi": [
-	"Po naciśnięciu klawisza ‘ na klawiaturze podczas odpalonej rozgrywki można otworzyć debug sztucznej inteligencji. W tym trybie naciśnięcie num4 pozwala na pokazanie zasięgu widzenia postaci oraz co ta postać wykryła."
+	"Po naciśnięciu klawisza ‘ na klawiaturze podczas odpalonej rozgrywki można otworzyć debug sztucznej inteligencji. W tym trybie naciśnięcie num4 pozwala na pokazanie zasięgu widzenia postaci oraz zaznaczyć co ta postać wykryła."
   ],
-  "Odnosniki":[{
-    "Name":"",
-    "Value":""}
+  "Odnosniki":[
+    {
+    "Name":"AiPerception",
+    "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html"
+    },
+    {
+      "Name":"SetTimerByEvent",
+      "Value":"https://docs.unrealengine.com/en-us/BlueprintAPI/Utilities/Time/SetTimerbyEvent/index.html"
+    },
+    {
+      "Name":"Branch",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/FlowControl/Branch/index.html"
+    }
   ]
 },
 {
@@ -188,10 +222,30 @@
       "Value" : "Gdy posiada klucz i znajduje sie wystarczajaco blisko postać otworzy drzwi"
     }
   ],
-  "Podpowiedzi": [],
-  "Odnosniki":[{
-    "Name":"",
-    "Value":""}
+  "Podpowiedzi": [
+    "Serwis będzie podobny w budowie do zadania"
+  ],
+  "Odnosniki":[
+    {
+    "Name":"GetActorOfClass",
+    "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/GetActorOfClass/index.html"
+    },
+    {
+      "Name":"FindingActors",
+      "Value":"https://docs.unrealengine.com/en-US/Gameplay/HowTo/FindingActors/Blueprints/index.html"
+    },
+    {
+      "Name":"Behavior Tree Node Reference: Services",
+      "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceServices/index.html"
+    },
+    {
+      "Name":"Behavior Tree Node Reference: Tasks",
+      "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceTasks/index.html"
+    },
+    {
+      "Name":"IsValid",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/IsValid/index.html"
+    }
   ]
 },
 {
@@ -233,9 +287,24 @@
   "Podpowiedzi": [
 	"Możesz wykorzystać drzewo BT_patrol przez umieszczenie węzła run behavior w drzewie"
   ],
-  "Odnosniki":[{
-    "Name":"",
-    "Value":""}
+  "Odnosniki":[
+    {
+    "Name":"AiPerception",
+    "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html"
+    },
+    {
+      "Name":"SetTimerByEvent",
+      "Value":"https://docs.unrealengine.com/en-us/BlueprintAPI/Utilities/Time/SetTimerbyEvent/index.html"
+    },
+    {
+      "Name":"Branch",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/FlowControl/Branch/index.html"
+    },
+    {
+      "Name":"Behavior Tree Node Reference: Decorators",
+      "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceDecorators/index.html"
+    }
+
   ]
 },
 {
@@ -259,9 +328,59 @@
     }
   ],
   "Podpowiedzi": [],
-  "Odnosniki":[{
-    "Name":"",
-    "Value":""}
+  "Odnosniki":[
+    {
+    "Name":"AiPerception",
+    "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html"
+    },
+    {
+      "Name":"SetTimerByEvent",
+      "Value":"https://docs.unrealengine.com/en-us/BlueprintAPI/Utilities/Time/SetTimerbyEvent/index.html"
+    },
+    {
+      "Name":"Branch",
+      "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/Utilities/FlowControl/Branch/index.html"
+    },
+    {
+      "Name":"Behavior Tree Node Reference: Decorators",
+      "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceDecorators/index.html"
+    }
   ]
-}
+},
+  {
+    "Name": "ZbieranieTabletek",
+    "Tytul": "Zbieranie Tabletek",
+    "Wstep": "W rzeczywistym świecie jak i grze nie wszystko oceniamy w systemie 0/1. Czas więc na podjęcie próby szerszego spojrzenia na stworzony świat gry, w tym poziomie zajmiemy się analizą i wyborem korzystniejszych wariantów. W tym etapie postarmy się zaprogramować postać w taki sposób aby zbierała tabletki określonego koloru w swojej najbliższej okolicy. Dzięki temu poznasz zasadę działania Enviroment Query System",
+    "Mapa": [
+      {
+        "Name" : "Opis mapy",
+        "Value" : "Zamknięte pomieszczenie w którym pojawiają się pigułki które z czasem zwiększają swoją objętość. Dodatkowo po 5 minutach mapa się zatrzyma."
+      },
+      {
+        "Name" : "CharacterPillCollector",
+        "Value" : "Obiekt który zbiera pigułki"
+      }
+    ],
+    "Cel": [
+      "Zmodyfikowanie BT_PillCollector aby postać zbierała zielone pigułki",
+      "Zaimplementowanie EQS_FindBestPill aby znajdować zielone tabletki w zasięgu 1250"
+    ],
+    "Dostepne_zadania": [
+      {
+        "Name" : "BTT_PickUpPill ",
+        "Value" : "Zdanie do wykorzystania aby podnieść pigułkę"
+      },
+      {
+        "Name" : "BTT_RunEqsAndSetVariable",
+        "Value" : "Zadanie które wykonuje EQS_FindBestPill pobierając wszystkie tabletki w zasięgu, przemnaża ich wynik przez size/11, a następnie wybiera najlepsza i ustawia ją w BestPill w tablicy"
+      }
+    ],
+    "Podpowiedzi": [],
+    "Odnosniki":[
+      {
+        "Name":"EQSQuickStart",
+        "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/EQS/EQSQuickStart/index.html"
+      }
+    ]
+  }
 ]
