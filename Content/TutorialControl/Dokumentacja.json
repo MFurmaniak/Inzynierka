@@ -2,7 +2,7 @@
   {
   "Name": "Licznik",
   "Tytul": "Licznik",
-  "Wstep": "Behaviour Tree - pozwala użytkownikowi w prosty sposób określać zachowanie obiektów na wydarzenia, patrząc w dobrze skonstruowane drzewo wiemy dokładnie w jaki sposób obiekty będą reagować na różne zmiany. Poznanie BT, w jaki sposób działa i jakie możliwości daje jest kluczowe do dalszej pracy nad AI. ",
+  "Wstep": "Komponent Behaviour Tree (BT) pozwala w prosty sposób zdefiniować zachowanie obiektu w reakcji na wydarzenia w grze. Poznanie BT, w jaki sposób działa i jakie daje możliwości jest kluczowe do dalszej pracy nad AI. ",
   "Mapa": [
     {
       "Name" : "Wyswietlacz",
@@ -14,7 +14,7 @@
     },
     {
       "Name" : "Postac",
-      "Value" : "Manekin którym poruszamy przy pomocy myszy w celu zmiany stanu guzika."
+      "Value" : "Manekin którym poruszamy za pomocą myszy w celu zmiany stanu guzika."
     }
   ],
   "Cel": [
@@ -47,11 +47,11 @@
   "Mapa": [
     {
       "Name" : "CharacterPoruszanie ",
-      "Value" : "obiekt który będziemy chcieli przemieścić"
+      "Value" : "Obiekt który będziemy chcieli przemieścić"
     },
     {
       "Name" : "CustomTarget ",
-      "Value" : "wyznaczony punkt końcowy na mapie"
+      "Value" : "Wyznaczony punkt końcowy na mapie"
     }
   ],
   "Cel": [
@@ -76,23 +76,23 @@
 {
   "Name": "Blokada drogi",
   "Tytul": "Blokada drogi",
-  "Wstep": "Czasami najkrótsza droga z punktu A do punktu B nie jest drogą którą powinniśmy wybierać. Często w grach postacie muszą rozróżniać czy jakiś obiekt jest wrogi czy przyjazny. Podczas tego poziomu spróbujemy wybrać trudniejszą drogę w celu ominięcia strażnika. Dzięki temu dowiemy się jak sprawić aby postać była traktowana jako przeszkoda oraz jak zrobić miejsca które postać sama będzie używać do określonych zadań.",
+  "Wstep": "Czasami najkrótsza droga z punktu A do punktu B nie jest drogą którą powinniśmy wybierać. Często w grach postacie muszą rozróżniać czy jakiś obiekt jest wrogi czy przyjazny. Podczas rozwiązywania tego poziomu spróbujemy wybrać trudniejszą drogę w celu ominięcia strażnika. Dzięki temu dowiemy się jak sprawić aby postać była traktowana jako przeszkoda oraz jak zrobić miejsca które postać sama będzie używać do określonych zadań.",
   "Mapa": [
     {
       "Name" : "Opis",
-      "Value" : "Mapa została podzielona na dwie części, szarą w której nasza postać rozpoczyna swoją trasę oraz zieloną pomieszczenie które jest celem do którego musimy dojść. Do zielonego pomieszczenia prowadzą dwie ścieżki, na jednej z nich stoi strażnik, natomiast na drugiej ścieżce jest przepaść."
+      "Value" : "Mapa została podzielona na dwie części, szarą w której nasza postać rozpoczyna swoją trasę oraz zielone pomieszczenie. Do zielonego pomieszczenia prowadzą dwie ścieżki, na jednej z nich stoi strażnik, natomiast na drugiej ścieżce jest przepaść."
     },
     {
       "Name" : "Character_Blocker",
-      "Value" : "strażnik"
+      "Value" : "Strażnik"
     },
     {
       "Name" : "Character_Blokada_Drogi",
-      "Value" : "obiekt który będziemy chcieli przemieścić"
+      "Value" : "Obiekt który będziemy chcieli przemieścić"
     },
     {
       "Name" : "Target_Blokada_Drogi ",
-      "Value" : "wyznaczony cel na mapie"
+      "Value" : "Wyznaczony cel na mapie"
     }
   ],
   "Cel": [
@@ -118,7 +118,7 @@
 {
   "Name": "Czujnik światła",
   "Tytul": "Czujnik światła",
-  "Wstep": "W tym etapie trochę naciągniemy rzeczywistość aby pokazać w jaki sposób można sprawić aby postać mogła patrzeć, widzieć i reagować na to co widzi. Naszą postacią będzie tutaj lampa ścienna, która jak automatyczne światła będzie się zapalać gdy wykryje naszą postać. W tym etapie dowiesz się jak skonfigurować komponent AiPerception dla AiController.",
+  "Wstep": "Na potrzeby tego poziomu naciągniemy rzeczywistość aby pokazać w jaki sposób można sprawić aby postać mogła patrzeć i reagować na to co widzi. Naszą postacią będzie tutaj lampa ścienna, która jak automatyczne światła będzie się zapalać gdy wykryje naszą postać. W tym etapie dowiesz się jak skonfigurować komponent AiPerception dla AiController.",
   "Mapa": [
     {
       "Name" : "Pomieszczenie",
@@ -126,7 +126,7 @@
     },
     {
       "Name" : "Postać ",
-      "Value" : "sterowana ręcznie."
+      "Value" : "Sterowana ręcznie."
     }
   ],
   "Cel": [
@@ -149,27 +149,27 @@
 {
   "Name": "Labirynt",
   "Tytul": "Labirynt",
-  "Wstep": "Znalezienie drogi z punktu A do punktu B nie stanowi już żadnego problemu. Co jednak w przypadku gdy na drodze pojawią się drzwi które są zamknięte, a nie da się ich ominąć? Często elementem gier jest zbieranie przedmiotów będących elementem jakiejś misji. Tak więc podczas tego poziomu będzie trzeba znaleźć klucz do drzwi przez które musi nasz obiekt się przedostać. W tym etapie dowiesz się jak stworzyć prosty serwis oraz zadanie jak również jakie są różnice pomiędzy nimi.",
+  "Wstep": "Znalezienie drogi z punktu A do punktu B nie stanowi już żadnego problemu. Co jednak w przypadku gdy na drodze pojawią się drzwi które są zamknięte, a nie da się ich ominąć? Często elementem gier jest zbieranie przedmiotów będących elementem jakiejś misji. Tak więc podczas tego poziomu będzie trzeba znaleźć klucz do drzwi przez które musi nasz obiekt się przedostać. Podczas rozwiązywania tego poziomu dowiesz się jak stworzyć prosty serwis oraz zadanie jak również jakie są różnice pomiędzy nimi.",
   "Mapa": [
     {
       "Name" : "FinishPoint",
-      "Value" : "miejsce docelowe"
+      "Value" : "Miejsce docelowe"
     },
     {
       "Name" : "Character_Labirynt_Klucz",
-      "Value" : "postać która ma wykonać zadanie"
+      "Value" : "Postać która ma wykonać zadanie"
     },
     {
       "Name" : "Door",
-      "Value" : "drzwi które wymagają klucza"
+      "Value" : "Drzwi które wymagają klucza"
     },
     {
       "Name" : "Key",
-      "Value" : "klucz do drzwi pojawia się po losowym czasie z przedziału 0-10 po rozpoczęciu etapu"
+      "Value" : "Klucz do drzwi pojawia się po losowym czasie z przedziału 0-10 po rozpoczęciu etapu"
     },
     {
       "Name" : "KeyLocationSpawn ",
-      "Value" : "miejsce gdzie znajdziemy klucz"
+      "Value" : "Miejsce gdzie znajdziemy klucz"
     }
   ],
   "Cel": [
@@ -181,11 +181,11 @@
   "Dostepne_zadania": [
      {
       "Name" : "BTT_PickUpKey",
-      "Value" : "postać podniesie klucz gdy znajduje sie wystarczajaco blisko"
+      "Value" : "Postać podniesie klucz gdy znajduje sie wystarczajaco blisko"
     },
 	{
       "Name" : "BTT_OpenDoor ",
-      "Value" : "gdy posiada klucz i znajduje sie wystarczajaco blisko postać otworzy drzwi"
+      "Value" : "Gdy posiada klucz i znajduje sie wystarczajaco blisko postać otworzy drzwi"
     }
   ],
   "Podpowiedzi": [],
@@ -197,7 +197,7 @@
 {
   "Name": "Wartownik 1",
   "Tytul": "Wartownik 1",
-  "Wstep": "W poprzednich poziomach nauczyliśmy się już tworzyć drzewa zachowań oraz używać komponentu aby sprawić aby postać potrafiła patrzeć. W tym etapie połączymy te dwie rzeczy w jednej postaci i sprawimy aby wykonywała jedną czynność w tym przypadku patrolowanie okolicy a gdy zobaczy jedną z postaci biegających po mapie ucieknie do swojej kryjówki a następnie wróci do patrolowania. Dzięki temu nauczysz się łączyć te dwie rzeczy i tworzyć bardziej zaawansowane postaci.",
+  "Wstep": "W poprzednich poziomach nauczyliśmy się już tworzyć drzewa zachowań oraz używać komponentu aby sprawić aby obiekt potrafił patrzeć. Podczas rozwiązywania tego poziomu połączymy te dwie umiejętności w jednej postaci i sprawimy aby wykonywała jedną czynność w tym przypadku patrolowanie okolicy a gdy zobaczy jedną z postaci biegających po mapie ucieknie do swojej kryjówki a następnie wróci do patrolowania. Po rozwiązaniu tego poziomu zobaczysz, że połączenie prostych akcji w jednym obiekcie jest nie jest trudne a obiekty stają się bardziej zaawansowane.",
   "Mapa": [
     {
       "Name" : "Opis",
@@ -205,15 +205,15 @@
     },
     {
       "Name" : "Character_Wartownik",
-      "Value" : "obiekt do oprogramowania"
+      "Value" : "Obiekt do oprogramowania"
     },
     {
       "Name" : "Target_Wartownik",
-      "Value" : "miejsce meldunku wartownika"
+      "Value" : "Miejsce meldunku wartownika"
     },
     {
       "Name" : "Manekin ",
-      "Value" : "obiekt którym będziemy się poruszać"
+      "Value" : "Obiekt którym będziemy się poruszać"
     }
   ],
   "Cel": [
@@ -223,11 +223,11 @@
   "Dostepne_zadania": [
      {
       "Name" : "BTT_ResetLineOfSight ",
-      "Value" : "należy wykonać po dojściu do wyznaczonego miejsca"
+      "Value" : "Należy wykonać po dojściu do wyznaczonego miejsca"
     },
 	{
       "Name" : "BT_Patrol",
-      "Value" : "do wykorzystania aby wartownik patrolował teren"
+      "Value" : "Do wykorzystania aby wartownik patrolował teren"
     }
   ],
   "Podpowiedzi": [
@@ -241,7 +241,7 @@
 {
   "Name": "Wartownik V2",
   "Tytul": "Wartownik V2",
-  "Wstep": "W poprzedniej wersji utworzyliśmy wartownika który w momencie w którym zauważy przeciwnika ucieka do swojej kryjówki. Postać tego typu może być jednak mało przydatna. W tym etapie stworzymy coś bardziej zaawansowanego. W tym przypadku postać po zobaczeniu postaci powinna podążać za nią do momentu w którym straci go z zasięgu wzroku, po tym dojść do miejsca w którym widziała go po raz ostatni i wrócić do patrolowania.",
+  "Wstep": "W poprzedniej wersji utworzyliśmy wartownika który w momencie w którym zauważy przeciwnika ucieka do swojej kryjówki. Postać tego typu może być jednak mało przydatna. Podczas tego poziomu pójdziemy o krok dalej, stworzymy postać która po zobaczeniu innej postaci powinna podążać za nią, a w przypadku gdy straci go z zasięgu wzroku pójdzie do miejsca w którym widziała śledzoną postać po raz ostatni. Na koniec natomiast wartownik wróci do patrolowania.",
   "Mapa": [
     {
       "Name" : "Opis",
