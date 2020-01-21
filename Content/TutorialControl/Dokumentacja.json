@@ -1,50 +1,4 @@
 [
-  {
-  "Name": "Licznik",
-  "Tytul": "Licznik",
-  "Wstep": "Komponent Behaviour Tree (BT) pozwala w prosty sposób zdefiniować zachowanie obiektu w reakcji na wydarzenia w grze. Poznanie BT, w jaki sposób działa i jakie daje możliwości jest kluczowe do dalszej pracy nad AI. ",
-  "Mapa": [
-    {
-      "Name" : "Wyswietlacz",
-      "Value" : "Na środku mapy stoi telebim na którym będzie wyświetlany stan naszego licznika."
-    },
-    {
-      "Name" : "Guzik",
-      "Value" : "Zielone pole na mapie reprezentuje klasyczny guzik (dwa stany on/off), po wejściu postaci na pole guzik zostaje wciśnięty (on), gdy postać zejdzie z pola stan guzika się zmieni (off)."
-    },
-    {
-      "Name" : "Postac",
-      "Value" : "Manekin którym poruszamy za pomocą myszy w celu zmiany stanu guzika."
-    }
-  ],
-  "Cel": [
-    "Należy skonstruować drzewo decyzyjne wykorzystując dostępne zadania w taki sposób, aby na wyświetlaczu były drukowane liczby/litery w zależności od stanu (on/off) guzika."
-    ],
-  "Dostepne_zadania": [
-     {
-      "Name" : "BTT_resetValue",
-      "Value" : "Resetuje stan licznika do stanu początkowego"
-    },
-    {
-      "Name" : "BTT_PrintNumberAndIncrement",
-      "Value" : "Pobiera aktualny stan licznika, drukuje wartość na wyświetlaczu i zwiększa wartość o 1"
-    },
-    {
-      "Name" : "BTT_PrintLetterAndIncrement",
-      "Value" : "Analogicznie jak powyższy tylko działa na literach."
-    }
-  ],
-  "Podpowiedzi": [
-    "Ustawienie Observer aborts na self we flow control dekoratora pozwala na natychmiastowe porzucenie gałęzi w momencie gdy warunek dekoratora nie jest spełniony"
-  ],
-  "Odnosniki":[{
-    "Name":"Behavior Tree Node Reference: Decorators",
-    "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceDecorators/index.html"},
-    {
-      "Name":"Behavior Tree Node Reference: Composites",
-      "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceComposites/index.html"}
-  ]
-},
 {
   "Name": "Poruszanie Się",
   "Tytul": "Poruszanie Się",
@@ -89,6 +43,52 @@
       "Name":"SetValueAsObject",
       "Value":"https://docs.unrealengine.com/en-US/BlueprintAPI/AI/Components/Blackboard/SetValueasObject/index.html"
     }
+  ]
+},
+{
+  "Name": "Licznik",
+  "Tytul": "Licznik",
+  "Wstep": "Komponent Behaviour Tree (BT) pozwala w prosty sposób zdefiniować zachowanie obiektu w reakcji na wydarzenia w grze. Poznanie BT, w jaki sposób działa i jakie daje możliwości jest kluczowe do dalszej pracy nad AI. ",
+  "Mapa": [
+    {
+      "Name" : "Wyswietlacz",
+      "Value" : "Na środku mapy stoi telebim na którym będzie wyświetlany stan naszego licznika."
+    },
+    {
+      "Name" : "Guzik",
+      "Value" : "Zielone pole na mapie reprezentuje klasyczny guzik (dwa stany on/off), po wejściu postaci na pole guzik zostaje wciśnięty (on), gdy postać zejdzie z pola stan guzika się zmieni (off)."
+    },
+    {
+      "Name" : "Postac",
+      "Value" : "Manekin którym poruszamy za pomocą myszy w celu zmiany stanu guzika."
+    }
+  ],
+  "Cel": [
+    "Należy skonstruować drzewo decyzyjne wykorzystując dostępne zadania w taki sposób, aby na wyświetlaczu były drukowane liczby/litery w zależności od stanu (on/off) guzika."
+    ],
+  "Dostepne_zadania": [
+     {
+      "Name" : "BTT_resetValue",
+      "Value" : "Resetuje stan licznika do stanu początkowego"
+    },
+    {
+      "Name" : "BTT_PrintNumberAndIncrement",
+      "Value" : "Pobiera aktualny stan licznika, drukuje wartość na wyświetlaczu i zwiększa wartość o 1"
+    },
+    {
+      "Name" : "BTT_PrintLetterAndIncrement",
+      "Value" : "Analogicznie jak powyższy tylko działa na literach."
+    }
+  ],
+  "Podpowiedzi": [
+    "Ustawienie Observer aborts na self we flow control dekoratora pozwala na natychmiastowe porzucenie gałęzi w momencie gdy warunek dekoratora nie jest spełniony"
+  ],
+  "Odnosniki":[{
+    "Name":"Behavior Tree Node Reference: Decorators",
+    "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceDecorators/index.html"},
+    {
+      "Name":"Behavior Tree Node Reference: Composites",
+      "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeNodeReference/BehaviorTreeNodeReferenceComposites/index.html"}
   ]
 },
 {
@@ -249,8 +249,8 @@
   ]
 },
 {
-  "Name": "Wartownik 1",
-  "Tytul": "Wartownik 1",
+  "Name": "Wartownik V1",
+  "Tytul": "Wartownik V1",
   "Wstep": "W poprzednich poziomach nauczyliśmy się już tworzyć drzewa zachowań oraz używać komponentu aby sprawić aby obiekt potrafił patrzeć. Podczas rozwiązywania tego poziomu połączymy te dwie umiejętności w jednej postaci i sprawimy aby wykonywała jedną czynność w tym przypadku patrolowanie okolicy a gdy zobaczy jedną z postaci biegających po mapie ucieknie do swojej kryjówki a następnie wróci do patrolowania. Po rozwiązaniu tego poziomu zobaczysz, że połączenie prostych akcji w jednym obiekcie jest nie jest trudne a obiekty stają się bardziej zaawansowane.",
   "Mapa": [
     {
@@ -353,7 +353,7 @@
     "Wstep": "W rzeczywistym świecie jak i grze nie wszystko oceniamy w systemie 0/1. Czas więc na podjęcie próby szerszego spojrzenia na stworzony świat gry, w tym poziomie zajmiemy się analizą i wyborem korzystniejszych wariantów. W tym etapie postarmy się zaprogramować postać w taki sposób aby zbierała tabletki określonego koloru w swojej najbliższej okolicy. Dzięki temu poznasz zasadę działania Enviroment Query System",
     "Mapa": [
       {
-        "Name" : "Opis mapy",
+        "Name" : "Opis",
         "Value" : "Zamknięte pomieszczenie w którym pojawiają się pigułki które z czasem zwiększają swoją objętość. Dodatkowo po 5 minutach mapa się zatrzyma."
       },
       {
