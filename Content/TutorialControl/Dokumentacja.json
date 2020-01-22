@@ -5,16 +5,16 @@
   "Wstep": "Postacie sterowane sztuczną inteligencją potrafią wykonywać wiele czynności. Niezależnie od ich zachowań najpierw trzeba ustawić z czego określony pionek ma korzystać. W tym zadaniu dowiesz się jak ustawić kontroler sztucznej inteligencji dla obiektu oraz jak uruchomić drzewo decyzyjne. ",
   "Mapa": [
     {
-      "Name" : "CharacterPoruszanie ",
+      "Name" : "Ch_MoveTo",
       "Value" : "Obiekt który będziemy chcieli przemieścić"
     },
     {
-      "Name" : "CustomTarget ",
+      "Name" : "Target_MoveTo",
       "Value" : "Wyznaczony punkt końcowy na mapie"
     }
   ],
   "Cel": [
-    "Postać ma przejść z pozycji startowej do wyznaczonego punktu na mapie używając tylko kontrolera sztucznej inteligencji (AiController)",
+    "Postać ma przejść z pozycji startowej do wyznaczonego punktu na mapie używając tylko kontrolera sztucznej inteligencji (AIController)",
 	"Postać ma przejść z pozycji startowej do wyznaczonego punktu na mapie używając drzewa zachowań (BehaviorTree i BlackBoard)"
     ],
   "Dostepne_zadania": [
@@ -26,7 +26,7 @@
   "Podpowiedzi": [
 	"Ustawienie klucza typu Object o klasie bazowej typu Actor pozwala na użycie zadania move to do tego obiektu.",
 	"Aby postać mogła się poruszać, konieczne jest umieszczanie siatki nawigacji na mapie.",
-    "Naciśnięcie klawisza podczas edycji poziomu pozwala wyświetlić siatkę nawigacji."
+    "Naciśnięcie klawisza p podczas edycji poziomu pozwala wyświetlić siatkę nawigacji."
   ],
   "Odnosniki":[{
     "Name":"Behavior Tree Node Reference: Tasks",
@@ -68,15 +68,15 @@
     ],
   "Dostepne_zadania": [
      {
-      "Name" : "BTT_resetValue",
+      "Name" : "BTT_ResetValue",
       "Value" : "Resetuje stan licznika do stanu początkowego"
     },
     {
-      "Name" : "BTT_PrintNumberAndIncrement",
+      "Name" : "BTT_PrintNumberAndIncrementValue",
       "Value" : "Pobiera aktualny stan licznika, drukuje wartość na wyświetlaczu i zwiększa wartość o 1"
     },
     {
-      "Name" : "BTT_PrintLetterAndIncrement",
+      "Name" : "BTT_PrintLetterAndIncrementValue",
       "Value" : "Analogicznie jak powyższy tylko działa na literach."
     }
   ],
@@ -101,22 +101,22 @@
       "Value" : "Mapa została podzielona na dwie części, szarą w której nasza postać rozpoczyna swoją trasę oraz zielone pomieszczenie. Do zielonego pomieszczenia prowadzą dwie ścieżki, na jednej z nich stoi strażnik, natomiast na drugiej ścieżce jest przepaść."
     },
     {
-      "Name" : "Character_Blocker",
+      "Name" : "Ch_Blocker",
       "Value" : "Strażnik"
     },
     {
-      "Name" : "Character_Blokada_Drogi",
+      "Name" : "Ch_RoadBlock",
       "Value" : "Obiekt który będziemy chcieli przemieścić"
     },
     {
-      "Name" : "Target_Blokada_Drogi ",
+      "Name" : "Target_RoadBlock",
       "Value" : "Wyznaczony cel na mapie do którego postać musi dojść"
     }
   ],
   "Cel": [
-    "Ustawienie NavLinkProxy_Blokada_Drogi w odpowiednim miejscu na mapie oraz skonfigurowanie smart link dla tego obiektu",
+    "Ustawienie NavLinkProxy_RoadBlock w odpowiednim miejscu na mapie oraz skonfigurowanie smart link dla tego obiektu",
 	"Zaznaczenie że Blocker to przeszkoda",
-	"Skonfigurowanie Eventu Receive Smart Link Reached dla NavLinkProxy_Blokada_Drogi"
+	"Skonfigurowanie Eventu Receive Smart Link Reached dla NavLinkProxy_RoadBlock"
     ],
   "Dostepne_zadania": [
      {
@@ -142,7 +142,7 @@
 {
   "Name": "Czujnik światła",
   "Tytul": "Czujnik światła",
-  "Wstep": "Na potrzeby tego poziomu naciągniemy rzeczywistość aby pokazać w jaki sposób można sprawić aby postać mogła patrzeć i reagować na to co widzi. Naszą postacią będzie tutaj lampa ścienna, która jak automatyczne światła będzie się zapalać gdy wykryje naszą postać. W tym etapie dowiesz się jak skonfigurować komponent AiPerception dla AiController.",
+  "Wstep": "Na potrzeby tego poziomu naciągniemy rzeczywistość aby pokazać w jaki sposób można sprawić aby postać mogła patrzeć i reagować na to co widzi. Naszą postacią będzie tutaj lampa ścienna, która jak automatyczne światła będzie się zapalać gdy wykryje naszą postać. W tym etapie dowiesz się jak skonfigurować komponent AIPerception dla AIController.",
   "Mapa": [
     {
       "Name" : "Pomieszczenie",
@@ -154,7 +154,7 @@
     }
   ],
   "Cel": [
-    "Należy tak zaprogramować Controller_LightSource, że w przypadku gdy sterowana postać będzie w zasięgu lampy, ta ma się zaświecić,a gdy postać opuści ten obszar światło powinno zgasnąć po określonym czasie. Efekt powinien przypominać światło sterowane fotokomórką na klatce schodowej."	
+    "Należy tak zaprogramować AICon_LightSource, że w przypadku gdy sterowana postać będzie w zasięgu lampy, ta ma się zaświecić,a gdy postać opuści ten obszar światło powinno zgasnąć po określonym czasie. Efekt powinien przypominać światło sterowane fotokomórką na klatce schodowej."	
     ],
   "Dostepne_zadania": [
      {
@@ -167,7 +167,7 @@
   ],
   "Odnosniki":[
     {
-    "Name":"AiPerception",
+    "Name":"AIPerception",
     "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html"
     },
     {
@@ -186,11 +186,11 @@
   "Wstep": "Znalezienie drogi z punktu A do punktu B nie stanowi już żadnego problemu. Co jednak w przypadku gdy na drodze pojawią się drzwi które są zamknięte, a nie da się ich ominąć? Często elementem gier jest zbieranie przedmiotów będących elementem jakiejś misji. Tak więc podczas tego poziomu będzie trzeba znaleźć klucz do drzwi przez które musi nasz obiekt się przedostać. Podczas rozwiązywania tego poziomu dowiesz się jak stworzyć prosty serwis oraz zadanie jak również jakie są różnice pomiędzy nimi.",
   "Mapa": [
     {
-      "Name" : "FinishPoint",
+      "Name" : "Target_Maze",
       "Value" : "Miejsce docelowe"
     },
     {
-      "Name" : "Character_Labirynt_Klucz",
+      "Name" : "Ch_Maze",
       "Value" : "Postać która ma wykonać zadanie"
     },
     {
@@ -202,7 +202,7 @@
       "Value" : "Klucz do drzwi pojawia się po losowym czasie z przedziału 0-10 po rozpoczęciu etapu"
     },
     {
-      "Name" : "KeyLocationSpawn ",
+      "Name" : "KeyLocationSpawn",
       "Value" : "Miejsce gdzie znajdziemy klucz"
     }
   ],
@@ -258,16 +258,12 @@
       "Value" : "Na mapie znajduje się chata wartownika oraz otaczają ją kilka drzew. Po mapie poruszają się małe elfy."
     },
     {
-      "Name" : "Character_Wartownik",
+      "Name" : "Ch_SentinelV1",
       "Value" : "Obiekt do oprogramowania"
     },
     {
-      "Name" : "Target_Wartownik",
+      "Name" : "Target_SentinelV1",
       "Value" : "Miejsce meldunku wartownika"
-    },
-    {
-      "Name" : "Manekin ",
-      "Value" : "Obiekt którym będziemy się poruszać"
     }
   ],
   "Cel": [
@@ -289,11 +285,11 @@
     }
   ],
   "Podpowiedzi": [
-	"Możesz wykorzystać drzewo BT_patrol przez umieszczenie węzła run behavior w drzewie"
+	"Możesz wykorzystać drzewo BT_Patrol przez umieszczenie węzła run behavior w drzewie"
   ],
   "Odnosniki":[
     {
-    "Name":"AiPerception",
+    "Name":"AIPerception",
     "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html"
     },
     {
@@ -318,7 +314,7 @@
   "Mapa": [
     {
       "Name" : "Opis",
-      "Value" : "Mapa wygląda dokładnie tak samo jak w ostatniej wersji wartownika, jednak postać wartownika umie już to co wartownik v1."
+      "Value" : "Mapa wygląda dokładnie tak samo jak w ostatniej wersji wartownika, jednak postać wartownika umie już to co wartownik V1."
     }
   ],
   "Cel": [
@@ -327,14 +323,14 @@
     ],
   "Dostepne_zadania": [
      {
-      "Name" : "",
-      "Value" : ""
+      "Name" : "BTS_FindLastLocation",
+      "Value" : "Serwis pozwalający na odczytanie lokacji przeciwnika"
     }
   ],
   "Podpowiedzi": [],
   "Odnosniki":[
     {
-    "Name":"AiPerception",
+    "Name":"AIPerception",
     "Value":"https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html"
     },
     {
@@ -354,19 +350,19 @@
   {
     "Name": "ZbieranieTabletek",
     "Tytul": "Zbieranie Tabletek",
-    "Wstep": "W rzeczywistym świecie jak i grze nie wszystko oceniamy w systemie 0/1. Czas więc na podjęcie próby szerszego spojrzenia na stworzony świat gry, w tym poziomie zajmiemy się analizą i wyborem korzystniejszych wariantów. W tym etapie postarmy się zaprogramować postać w taki sposób aby zbierała tabletki określonego koloru w swojej najbliższej okolicy. Dzięki temu poznasz zasadę działania Enviroment Query System(EQS).",
+    "Wstep": "W rzeczywistym świecie jak i grze nie wszystko oceniamy w systemie 0/1. Czas więc na podjęcie próby szerszego spojrzenia na stworzony świat gry, w tym poziomie zajmiemy się analizą i wyborem korzystniejszych wariantów. W tym etapie postarmy się zaprogramować postać w taki sposób aby zbierała tabletki określonego koloru w swojej najbliższej okolicy. Dzięki temu poznasz zasadę działania Enviroment Query System (EQS).",
     "Mapa": [
       {
         "Name" : "Opis",
         "Value" : "Zamknięte pomieszczenie w którym pojawiają się pigułki które z czasem zwiększają swoją objętość. Dodatkowo po 5 minutach mapa się zatrzyma."
       },
       {
-        "Name" : "CharacterPillCollector",
+        "Name" : "Ch_PillCollector",
         "Value" : "Obiekt który zbiera pigułki"
       }
     ],
     "Cel": [
-      "Włączenie EQS w ustawieniach silnika",
+      
       "Zmodyfikowanie BT_PillCollector aby postać zbierała zielone pigułki",
       "Zaimplementowanie EQS_FindBestPill aby znajdować zielone tabletki w zasięgu 1250"
     ],
@@ -380,7 +376,9 @@
         "Value" : "Zadanie które wykonuje EQS_FindBestPill pobierając wszystkie tabletki w zasięgu, przemnaża ich wynik przez size/11, a następnie wybiera najlepsza i ustawia ją w BestPill w tablicy"
       }
     ],
-    "Podpowiedzi": [],
+    "Podpowiedzi": [
+      "Aby móc używać EQS należy włączyć go w ustawieniach silnika"
+    ],
     "Odnosniki":[
       {
         "Name":"EQSQuickStart",
