@@ -251,7 +251,7 @@
 {
   "Name": "Wartownik V1",
   "Tytul": "Wartownik V1",
-  "Wstep": "W poprzednich poziomach nauczyliśmy się już tworzyć drzewa zachowań oraz używać komponentu by sprawić żeby obiekt potrafił patrzeć. Podczas rozwiązywania tego poziomu połączymy te dwie umiejętności w jednej postaci i sprawimy aby wykonywała jedną czynność w tym przypadku patrolowanie okolicy. Gdy zobaczy jakąś postać biegającą po mapie wartownik powinien udać się do swojej kryjówki, następnie wrócić do patrolowania. Po rozwiązaniu tego poziomu nauczysz się tworzyć bardziej zaawansowane zachowanie postaci.",
+  "Wstep": "W poprzednich poziomach nauczyliśmy się już tworzyć drzewa zachowań oraz używać komponentu by sprawić żeby obiekt potrafił patrzeć. Podczas rozwiązywania tego poziomu połączymy te dwie umiejętności w jednej postaci i sprawimy aby wykonywała jedną czynność w tym przypadku patrolowanie okolicy. Gdy zobaczy jakąś postać biegającą po mapie wartownik powinien udać się do swojej kryjówki, następnie wrócić do patrolowania. Po rozwiązaniu tego poziomu nauczysz się tworzyć bardziej zaawansowane zachowania postaci.",
   "Mapa": [
     {
       "Name" : "Opis",
@@ -281,7 +281,11 @@
     },
 	{
       "Name" : "BT_Patrol",
-      "Value" : "Do wykorzystania aby wartownik patrolował teren"
+      "Value" : "Do wykorzystania aby wartownik patrolował teren, wykorzystuje serwis BTS_FindNextPatrolLocationOnPath"
+    },
+    {
+      "Name" : "BTS_FindNextPatrolLocationOnPath",
+      "Value" : "Serwis znajdujący kolejne miejsce patrolu na ścieżce"
     }
   ],
   "Podpowiedzi": [
@@ -350,7 +354,7 @@
   {
     "Name": "ZbieranieTabletek",
     "Tytul": "Zbieranie Tabletek",
-    "Wstep": "W rzeczywistym świecie jak i grze nie wszystko oceniamy w systemie 0/1. Czas więc na podjęcie próby szerszego spojrzenia na stworzony świat gry, w tym poziomie zajmiemy się analizą i wyborem korzystniejszych wariantów. W tym etapie postarmy się zaprogramować postać w taki sposób aby zbierała tabletki określonego koloru w swojej najbliższej okolicy. Dzięki temu poznasz zasadę działania Enviroment Query System.",
+    "Wstep": "W rzeczywistym świecie jak i grze nie wszystko oceniamy w systemie 0/1. Czas więc na podjęcie próby szerszego spojrzenia na stworzony świat gry, w tym poziomie zajmiemy się analizą i wyborem korzystniejszych wariantów. W tym etapie postarmy się zaprogramować postać w taki sposób aby zbierała tabletki określonego koloru w swojej najbliższej okolicy. Dzięki temu poznasz zasadę działania Enviroment Query System(EQS).",
     "Mapa": [
       {
         "Name" : "Opis",
@@ -362,13 +366,14 @@
       }
     ],
     "Cel": [
+      "Włączenie EQS w ustawieniach silnika",
       "Zmodyfikowanie BT_PillCollector aby postać zbierała zielone pigułki",
       "Zaimplementowanie EQS_FindBestPill aby znajdować zielone tabletki w zasięgu 1250"
     ],
     "Dostepne_zadania": [
       {
         "Name" : "BTT_PickUpPill ",
-        "Value" : "Zdanie do wykorzystania aby podnieść pigułkę"
+        "Value" : "Zadanie do wykorzystania aby podnieść pigułkę"
       },
       {
         "Name" : "BTT_RunEqsAndSetVariable",
